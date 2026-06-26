@@ -15,6 +15,10 @@ find_package(OpenCV REQUIRED)
 
 include_directories(${OpenCV_INCLUDE_DIRS})
 
-add_executable(ascii_cam src/main.cpp)
+add_executable(ascii_cam 
+    src/main.cpp 
+    src/console.cpp
+    src/camera.cpp
+)
 
 target_link_libraries(ascii_cam ${OpenCV_LIBS})
