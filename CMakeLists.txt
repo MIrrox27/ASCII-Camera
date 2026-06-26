@@ -1,8 +1,10 @@
 # author https://github.com/MIrrox27/ASCII-Camera
 # CMakeLists.txt
 
+set(OpenCV_DIR "C:/msys64/ucrt64/lib/cmake/opencv4")
+find_package(OpenCV REQUIRED)
 cmake_minimum_required(VERSION 3.10)
-project(AsciiCam CXX)
+project(ASCII-Camera CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 
