@@ -3,6 +3,8 @@
 
 #include <opencv2/opencv.hpp>
 #include <iostream>
+#include "console.hpp"
+
 
 int main() {
     char gradient[12] = " .,^:;!$#%@";
@@ -14,7 +16,10 @@ int main() {
         std::cout << "\n\n --- Camera was started! Index: " << i << std::endl;
         break;
         }
-
     }
+    clearScreen();
+    moveCursor(0, 0);
+
+
     return 0;
 }
