@@ -22,3 +22,12 @@ add_executable(ascii_cam
 )
 
 target_link_libraries(ascii_cam ${OpenCV_LIBS})
+
+
+# Автоматическое копирование DLL файлов OpenCV в папку с .exe при сборке
+add_custom_command(TARGET ascii_cam POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        $<TARGET_RUNTIME_DLLS:ascii_cam>
+        $<TARGET_FILE_DIR:ascii_cam>
+    COMMAND_EXPAND_LISTS
+)
