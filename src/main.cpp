@@ -5,17 +5,16 @@
 #include <iostream>
 
 int main() {
-    setlocale(LC_ALL, "Russian");
+    char gradient[12] = " .,^:;!$#%@";
+ 
+    for (int i = 0; i <= 10; i++) {
+        cv::VideoCapture cap(i);
 
+        if (cap.isOpened()) {
+        std::cout << "\n\n --- Camera was started! Index: " << i << std::endl;
+        break;
+        }
 
-    // Открываем камеру по умолчанию (в моем случае 1 - встроенная в ноутбук)
-    cv::VideoCapture cap(1);
-    
-    if (!cap.isOpened()) {
-        std::cerr << "-1 Ошибка" << std::endl;
-        return -1;
     }
-
-    std::cout << "0 Камера запустилась" << std::endl;
     return 0;
 }
