@@ -6,6 +6,8 @@
 #include <windows.h>
 #include "console.hpp"
 #include <iostream>
+#include <opencv2/opencv.hpp>
+
 
 using namespace std;
 
@@ -26,14 +28,11 @@ void moveCursor(int x, int y) {
 }
 
 int consoleSize(int x, int y){
-    
     HWND hwnd = GetConsoleWindow();
     if (hwnd == NULL) return 1;
-
-    // Небольшая задержка для инициализации окна (особенно важно при запуске)
     Sleep(10);
 
-    // Получаем владельца окна (для Windows 11)
+    
     HWND owner = GetWindow(hwnd, GW_OWNER);
     if (owner == NULL) {
         SetWindowPos(hwnd, nullptr, 0, 0, x, y, SWP_NOZORDER | SWP_NOMOVE);
@@ -42,3 +41,4 @@ int consoleSize(int x, int y){
     }
     return 0;
 }
+
