@@ -26,9 +26,9 @@ void moveCursor(int x, int y) {
 }
 
 int consoleSize(int x, int y){
-    cout << 1 << endl;
+    
     HWND hwnd = GetConsoleWindow();
-    if (hwnd == NULL) return;
+    if (hwnd == NULL) return 1;
 
     // Небольшая задержка для инициализации окна (особенно важно при запуске)
     Sleep(10);
@@ -36,10 +36,9 @@ int consoleSize(int x, int y){
     // Получаем владельца окна (для Windows 11)
     HWND owner = GetWindow(hwnd, GW_OWNER);
     if (owner == NULL) {
-        // Windows 10 и старше
         SetWindowPos(hwnd, nullptr, 0, 0, x, y, SWP_NOZORDER | SWP_NOMOVE);
     } else {
-        // Windows 11
         SetWindowPos(owner, nullptr, 0, 0, x, y, SWP_NOZORDER | SWP_NOMOVE);
     }
+    return 0;
 }
