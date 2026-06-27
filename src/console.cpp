@@ -5,6 +5,9 @@
 #include <cstdlib>
 #include <windows.h>
 #include "console.hpp"
+#include <iostream>
+
+using namespace std;
 
 void clearScreen(){
       #ifdef _WIN32
@@ -20,4 +23,9 @@ void moveCursor(int x, int y) {
   coord.Y = y;
   SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 
+}
+
+void consoleSize(int x, int y){
+  string command = "mode con cols=" + to_string(x) + " lines=" + to_string(y);
+  system(command.c_str());
 }
