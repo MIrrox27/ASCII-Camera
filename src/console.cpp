@@ -25,14 +25,21 @@ void moveCursor(int x, int y) {
 
 }
 
-void consoleSize(int x, int y){
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+int consoleSize(int x, int y){
+    cout << 1 << endl;
+    HWND hwnd = GetConsoleWindow();
+    if (hwnd == NULL) return;
 
-    // новый размер буфера консоли
-    COORD bufferSize = { (SHORT)x, (SHORT)y };
-    SetConsoleScreenBufferSize(hConsole, bufferSize);
+    // Небольшая задержка для инициализации окна (особенно важно при запуске)
+    Sleep(10);
 
-    // размер видимого окна консоли
-    SMALL_RECT windowSize = { 0, 0, (SHORT)(x - 1), (SHORT)(y - 1) };
-    SetConsoleWindowInfo(hConsole, TRUE, &windowSize);
+    // Получаем владельца окна (для Windows 11)
+    HWND owner = GetWindow(hwnd, GW_OWNER);
+    if (owner == NULL) {
+        // Windows 10 и старше
+        SetWindowPos(hwnd, nullptr, 0, 0, x, y, SWP_NOZORDER | SWP_NOMOVE);
+    } else {
+        // Windows 11
+        SetWindowPos(owner, nullptr, 0, 0, x, y, SWP_NOZORDER | SWP_NOMOVE);
+    }
 }
