@@ -6,5 +6,6 @@
 
 void clearScreen();
 void moveCursor(int x, int y);
+void consoleSize(int x, int y);
 
 #endif
