@@ -26,6 +26,13 @@ void moveCursor(int x, int y) {
 }
 
 void consoleSize(int x, int y){
-  string command = "mode con cols=" + to_string(x) + " lines=" + to_string(y);
-  system(command.c_str());
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    // новый размер буфера консоли
+    COORD bufferSize = { (SHORT)x, (SHORT)y };
+    SetConsoleScreenBufferSize(hConsole, bufferSize);
+
+    // размер видимого окна консоли
+    SMALL_RECT windowSize = { 0, 0, (SHORT)(x - 1), (SHORT)(y - 1) };
+    SetConsoleWindowInfo(hConsole, TRUE, &windowSize);
 }
