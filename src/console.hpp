@@ -8,4 +8,5 @@ void clearScreen();
 void moveCursor(int x, int y);
 int consoleSize(int x, int y);
 
+
 #endif
