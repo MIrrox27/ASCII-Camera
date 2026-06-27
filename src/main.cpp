@@ -4,10 +4,17 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include "console.hpp"
+#include <cstdlib>
+#include <string>
 
 
 int main() {
+    int width = 10;
+    int height = 10;
+
+    consoleSize(width, height);
     char gradient[12] = " .,^:;!$#%@";
+    
  
     for (int i = 0; i <= 10; i++) {
         cv::VideoCapture cap(i);
@@ -19,7 +26,9 @@ int main() {
     }
     clearScreen();
     moveCursor(0, 0);
-
+    while (true){
+    }
+    
 
     return 0;
 }
