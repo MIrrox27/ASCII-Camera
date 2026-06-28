@@ -30,18 +30,36 @@ int main() {
     clearScreen();
     moveCursor(0, 0);
 
-     cv::Mat frame, gray;
+    cv::Mat frame, gray;
+    while (true){
+        cap >> frame;
 
-    while (true)
-    {
-        
+        if (frame.empty()) {
+            std::cerr << "Пустой кадр!" << std::endl;
+            break;
+        }
+
+        cv::cvtColor(frame, gray, cv::COLOR_BGR2GRAY);
+
+        cv::imshow("Цветной кадр", frame);
+        cv::imshow("Черно-белый кадр", gray);
+
+        char key = cv::waitKey(30);  // ждём 30 мс
+        if (key == 27) {             // ESC
+            break;
+        }
+        if (key == 's' || key == 'S') {
+            // Сохраняем grayscale кадр в файл
+            cv::imwrite("snapshot_grayscale.jpg", gray);
+            std::cout << "Кадр сохранён как snapshot_grayscale.jpg" << std::endl;
+        }
     }
     
 
 
         // освобождаем ресурсы
     cap.release();
-    //cv::destroyAllWindows();
     std::cout << "Programm ended" << std::endl;
     return 0;
 }
+
