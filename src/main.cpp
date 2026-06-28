@@ -1,6 +1,8 @@
 // author https://github.com/MIrrox27/ASCII-Camera
 // src/main.cpp
 
+// Проект заморожен, так как у меня не работают зависимости с CMake 
+
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include "console.hpp"

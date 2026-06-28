@@ -1,6 +1,7 @@
 // author https://github.com/MIrrox27/ASCII-Camera
 // src/console.cpp
 
+// Проект заморожен, так как у меня не работают зависимости с CMake 
 
 #include <cstdlib>
 #include <windows.h>
