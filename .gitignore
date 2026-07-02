@@ -1,72 +1,106 @@
-# Prerequisites
-*.d
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
-# Precompiled Headers
-*.gch
-*.pch
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
 
-# Linker files
-*.ilk
+# Mono-specific files
+*.pidb
+*.resources
 
-# Debugger Files
-*.pdb
+# Build results - vNext architectures
+ipch/
+[A-Za-z0-9_]-*.db
+[A-Za-z0-9_]-*.opendb
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-*.so.*
+# Visual Studio cache/configuration directories
+.vs/
+.venvs/
 
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-
-# Build directories
-build/
-Build/
-build-*/
-
-# CMake generated files
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-Makefile
-install_manifest.txt
-compile_commands.json
-
-# Temporary files
-*.tmp
-*.log
-*.bak
-*.swp
-
-# vcpkg
-vcpkg_installed/
-
-# debug information files
-*.dwo
-
-# test output & cache
-Testing/
-.cache/
-
-
+# Visual Studio Code
 .vscode/
+
+# NuGet packages
+*.nupkg
+*.snupkg
+
+# Paket Dependency Manager
+.paket/
+paket-files/
+
+# JetBrains Rider & ReSharper
+_ReSharper.*/
+*.resharper
+*.sln.iml
+
+# Build results (Zope)
+parts/
+var/
+eggs/
+develop-eggs/
+lib/
+lib64/
+slic/
+pyvenv/
+pip-selfcheck.json
+
+# DotCover
+*.dotCover
+
+# NCrunch
+*.ncrunch*
+*crunch*.local.xml
+
+# Visual Studio Test Explorer
+TestResults/
+
+# CodeSmith
+*.cst
+
+# F# Interactive
+*.fsx.lock
+
+# StyleCop
+StyleCop.StyleCop
+
+# Microsoft Fakes
+FakesAssemblies/
+
+# GhostDoc
+*.GhostDoc.xml
+
+# Emacs
+*~
+.\#*
+.menu
+_region_*
+*.elc
+
+# Vim
+*.swp
+*.swo
+
+# OS specific
+.DS_Store
+Thumbs.db
+Desktop.ini
